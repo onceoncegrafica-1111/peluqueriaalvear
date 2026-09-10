@@ -20,29 +20,29 @@
            ADN CROMÁTICO OFICIAL: SEPIA VINTAGE & MARRÓN SASTRE
            ========================================================= */
         :root {
-            --bg-sepia-soft: #FFF9EE;
+            --bg-sepia-soft: #FFFDF7;
             --bg-sepia-base: #FFF2D4;
-            --bg-sepia-dark: #F2DEBA;
+            --bg-sepia-dark: #E9D2A3;
             
             --brand-brown: #75583F;
-            --brand-brown-dark: #4A3525;
-            --brand-brown-light: #947254;
-            --brand-dark: #231F20;
+            --brand-brown-dark: #3F2918;
+            --brand-brown-light: #8E6847;
+            --brand-dark: #1E1A1B;
             
             --gold-vintage: #C89D66;
             --gold-light: #E8CA9B;
             
             --card-surface: #FFFFFF;
             --card-surface-hover: #FFFDF9;
-            --border-card: rgba(117, 88, 63, 0.16);
-            --border-card-hover: rgba(117, 88, 63, 0.45);
+            --border-card: rgba(117, 88, 63, 0.22);
+            --border-card-hover: rgba(117, 88, 63, 0.55);
             
-            --text-main: #231F20;
-            --text-muted: #66554B;
-            --text-subtle: #8A7A70;
+            --text-main: #1E1A1B;
+            --text-muted: #564438;
+            --text-subtle: #7E6D62;
             
-            --shadow-card: 0 6px 20px -3px rgba(117, 88, 63, 0.08), 0 2px 5px rgba(0, 0, 0, 0.03);
-            --shadow-hero: 0 10px 28px -3px rgba(117, 88, 63, 0.32), 0 0 14px rgba(200, 157, 102, 0.2);
+            --shadow-card: 0 8px 24px -3px rgba(95, 65, 40, 0.1), 0 2px 6px rgba(0, 0, 0, 0.04);
+            --shadow-hero: 0 12px 30px -3px rgba(85, 55, 30, 0.38), 0 0 16px rgba(200, 157, 102, 0.25);
             
             --font-display: 'Cinzel', serif;
             --font-serif: 'Playfair Display', Georgia, serif;
@@ -76,7 +76,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            padding: 24px 16px 42px;
+            padding: 26px 16px 44px;
             overflow-x: hidden;
             position: relative;
             letter-spacing: -0.01em;
@@ -90,7 +90,7 @@
             width: 100vw;
             height: 100vh;
             z-index: -2;
-            background: radial-gradient(circle at 50% 12%, #FFFBF2 0%, #FFF2D4 55%, #EEDDB8 100%);
+            background: radial-gradient(circle at 50% 10%, #FFFDF7 0%, #FFF2D4 52%, #E9D2A3 100%);
             overflow: hidden;
             pointer-events: none;
         }
@@ -101,18 +101,21 @@
             left: 0;
             width: 100%;
             height: 100%;
-            box-shadow: inset 0 0 130px rgba(117, 88, 63, 0.14);
+            box-shadow: inset 0 0 140px rgba(117, 88, 63, 0.18);
             pointer-events: none;
         }
 
+        /* DOBLE FILETE PERIMETRAL VINTAGE */
         .frame-line {
             position: fixed;
-            top: 8px;
-            bottom: 8px;
-            left: 8px;
-            right: 8px;
-            border: 1px solid rgba(117, 88, 63, 0.15);
-            border-radius: 20px;
+            top: 7px;
+            bottom: 7px;
+            left: 7px;
+            right: 7px;
+            border: 1.5px solid rgba(117, 88, 63, 0.35);
+            outline: 1px solid rgba(200, 157, 102, 0.4);
+            outline-offset: -4px;
+            border-radius: 18px;
             pointer-events: none;
             z-index: 0;
         }
@@ -122,12 +125,12 @@
             max-width: 480px;
             display: flex;
             flex-direction: column;
-            gap: 13px;
+            gap: 14px;
             z-index: 1;
         }
 
         /* =========================================================
-           ENCABEZADO: MÁS ESPACIADO VERTICAL & PROPORCIÓN
+           ENCABEZADO: RESPIRACIÓN Y TIPOGRAFÍA EDITORIAL
            ========================================================= */
         .brand-header {
             text-align: center;
@@ -144,14 +147,15 @@
             letter-spacing: 0.22em;
             text-transform: uppercase;
             color: var(--brand-brown);
-            padding: 4px 16px;
+            padding: 5px 18px;
             border-radius: 999px;
-            background: rgba(255, 255, 255, 0.75);
-            border: 1px solid rgba(117, 88, 63, 0.22);
-            box-shadow: 0 2px 6px rgba(117, 88, 63, 0.05);
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(117, 88, 63, 0.28);
+            box-shadow: 0 3px 8px rgba(117, 88, 63, 0.08);
             margin-bottom: 8px;
         }
 
+        /* Logo libre de recuadros con holgura visual */
         .logo-stage {
             width: 100%;
             max-width: 235px;
@@ -159,7 +163,7 @@
             align-items: center;
             justify-content: center;
             margin: 16px 0 22px;
-            filter: drop-shadow(0 4px 14px rgba(117, 88, 63, 0.14));
+            filter: drop-shadow(0 5px 15px rgba(117, 88, 63, 0.16));
             transition: transform 0.3s ease;
         }
 
@@ -173,12 +177,15 @@
             display: block;
         }
 
+        /* =========================================================
+           BIO EN PC: FRASES LARGAS EN 1 SOLA LÍNEA SIN CORTES
+           ========================================================= */
         .brand-bio {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 6px;
-            max-width: 95%;
+            width: 100%;
             margin-top: 6px;
         }
 
@@ -190,6 +197,7 @@
             text-transform: uppercase;
             color: var(--brand-brown-dark);
             line-height: 1.35;
+            white-space: nowrap; /* En PC: 1 sola línea */
         }
 
         .bio-sub {
@@ -198,6 +206,7 @@
             font-size: 0.88rem;
             color: var(--text-muted);
             line-height: 1.4;
+            white-space: nowrap; /* En PC: 1 sola línea */
         }
 
         .bio-location {
@@ -208,6 +217,7 @@
             color: var(--brand-brown-light);
             font-weight: 600;
             margin-top: 2px;
+            white-space: nowrap; /* En PC: 1 sola línea */
         }
 
         .social-bar {
@@ -222,14 +232,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
+            width: 42px;
+            height: 42px;
             border-radius: 50%;
             background: #FFFFFF;
             border: 1.5px solid var(--border-card);
             color: var(--brand-brown);
             text-decoration: none;
-            box-shadow: 0 3px 8px rgba(117, 88, 63, 0.08);
+            box-shadow: 0 4px 10px rgba(117, 88, 63, 0.08);
             transition: all 0.25s ease;
         }
 
@@ -238,7 +248,7 @@
             color: #FFFFFF;
             border-color: var(--brand-brown);
             transform: translateY(-2px);
-            box-shadow: 0 6px 14px rgba(117, 88, 63, 0.22);
+            box-shadow: 0 6px 16px rgba(117, 88, 63, 0.24);
         }
 
         .social-btn svg {
@@ -254,10 +264,10 @@
             align-items: center;
             justify-content: space-between;
             gap: 14px;
-            padding: 15px 18px;
+            padding: 16px 19px;
             background: var(--card-surface);
             border: 1.5px solid var(--border-card);
-            border-radius: 18px;
+            border-radius: 19px;
             text-decoration: none;
             color: var(--text-main);
             box-shadow: var(--shadow-card);
@@ -269,13 +279,13 @@
         .btn-card:hover {
             background: var(--card-surface-hover);
             border-color: var(--border-card-hover);
-            box-shadow: 0 8px 24px rgba(117, 88, 63, 0.12);
+            box-shadow: 0 10px 26px rgba(117, 88, 63, 0.14);
             transform: translateY(-2px);
         }
 
         /* HERO CARD WHATSAPP */
         .btn-hero {
-            background: linear-gradient(135deg, #75583F 0%, #523926 100%);
+            background: linear-gradient(135deg, #75583F 0%, #46301F 100%);
             border: 2px solid var(--gold-vintage);
             box-shadow: var(--shadow-hero);
             color: #FFFFFF;
@@ -301,13 +311,13 @@
         }
 
         .btn-hero:hover {
-            background: linear-gradient(135deg, #644933 0%, #422C1C 100%);
+            background: linear-gradient(135deg, #644933 0%, #382415 100%);
             border-color: var(--gold-light);
-            box-shadow: 0 12px 32px rgba(82, 57, 38, 0.35);
+            box-shadow: 0 14px 34px rgba(65, 40, 20, 0.4);
         }
 
         .btn-hero .btn-title { color: #FFFFFF; }
-        .btn-hero .btn-desc { color: #E8D8C8; }
+        .btn-hero .btn-desc { color: #EFE4D6; font-weight: 500; }
 
         .icon-box {
             display: flex;
@@ -330,7 +340,7 @@
 
         .icon-box.hero-gold {
             background: linear-gradient(135deg, #E8CA9B 0%, #C89D66 100%);
-            border: 1.5px solid rgba(255, 255, 255, 0.6);
+            border: 1.5px solid rgba(255, 255, 255, 0.7);
             color: #231F20;
         }
 
@@ -372,19 +382,19 @@
             border-radius: 999px;
             background: rgba(117, 88, 63, 0.1);
             color: var(--brand-brown);
-            border: 1px solid rgba(117, 88, 63, 0.22);
+            border: 1px solid rgba(117, 88, 63, 0.25);
             text-transform: uppercase;
         }
 
         .badge-pill.open-now {
             background: rgba(34, 139, 34, 0.12);
-            color: #1E7E34;
-            border-color: rgba(34, 139, 34, 0.3);
+            color: #1A6C2E;
+            border-color: rgba(34, 139, 34, 0.35);
         }
 
         .badge-pill.gold {
             background: #EED7B5;
-            color: #523926;
+            color: #4A3320;
             border-color: #C89D66;
         }
 
@@ -418,9 +428,9 @@
         }
 
         .btn-hero .arrow-box {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.18);
             color: #FFFFFF;
-            border-color: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.35);
         }
 
         .btn-hero:hover .arrow-box {
@@ -440,8 +450,8 @@
         .hours-card {
             background: var(--card-surface);
             border: 1.5px solid var(--border-card);
-            border-radius: 18px;
-            padding: 16px 18px;
+            border-radius: 19px;
+            padding: 16px 19px;
             box-shadow: var(--shadow-card);
             display: flex;
             flex-direction: column;
@@ -469,7 +479,7 @@
             flex-direction: column;
             gap: 6px;
             padding-top: 4px;
-            border-top: 1px dashed rgba(117, 88, 63, 0.2);
+            border-top: 1px dashed rgba(117, 88, 63, 0.22);
         }
 
         .hours-row {
@@ -563,16 +573,16 @@
         }
 
         .gallery-item {
-            flex: 0 0 145px;
-            height: 185px;
+            flex: 0 0 148px;
+            height: 188px;
             border-radius: 14px;
             overflow: hidden;
             position: relative;
             cursor: pointer;
             scroll-snap-align: start;
-            border: 1.5px solid rgba(117, 88, 63, 0.16);
+            border: 1.5px solid rgba(117, 88, 63, 0.18);
             background: var(--bg-sepia-base);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 3px 10px rgba(95, 65, 40, 0.08);
             transition: transform 0.25s ease, border-color 0.25s ease;
         }
 
@@ -630,7 +640,7 @@
             height: 200px;
             border-radius: 14px;
             overflow: hidden;
-            border: 1px solid rgba(117, 88, 63, 0.2);
+            border: 1px solid rgba(117, 88, 63, 0.22);
             background: #f1ede6;
             z-index: 1;
             position: relative;
@@ -807,7 +817,7 @@
         }
 
         .ribbon-signature {
-            background: linear-gradient(135deg, #75583F 0%, #4A3525 100%);
+            background: linear-gradient(135deg, #75583F 0%, #46301F 100%);
             border: 1px solid var(--gold-vintage);
             padding: 8px 24px;
             border-radius: 999px;
@@ -842,13 +852,110 @@
             font-weight: 600;
         }
 
+        /* =========================================================
+           MODO MÓVIL (<= 480PX): BALANCEADO Y PROPORCIONADO
+           ========================================================= */
         @media (max-width: 480px) {
-            body { padding: 20px 12px 34px; }
-            .logo-stage { max-width: 205px; margin: 12px 0 16px; }
-            .btn-card { padding: 14px 16px; }
-            .gallery-item { flex: 0 0 135px; height: 175px; }
-            .gallery-controls-pc { display: none; }
-            .lb-nav-btn { width: 36px; height: 36px; font-size: 17px; }
+            body {
+                padding: 22px 14px 40px;
+            }
+            .hub-container {
+                gap: 15px;
+            }
+            .frame-line {
+                top: 6px;
+                bottom: 6px;
+                left: 6px;
+                right: 6px;
+                border: 1.5px solid rgba(117, 88, 63, 0.4);
+                outline: 1px solid rgba(200, 157, 102, 0.45);
+                outline-offset: -3.5px;
+                border-radius: 16px;
+            }
+            .heritage-tag {
+                font-size: 0.68rem;
+                letter-spacing: 0.18em;
+                padding: 4px 14px;
+            }
+            .logo-stage {
+                max-width: 210px;
+                margin: 14px 0 18px;
+            }
+            
+            /* En móvil se activa el salto equilibrado sin palabras huérfanas */
+            .brand-bio {
+                gap: 7px;
+                max-width: 100%;
+            }
+            .bio-lead {
+                white-space: normal;
+                text-wrap: balance;
+                font-size: 0.78rem;
+                line-height: 1.42;
+                max-width: 285px;
+            }
+            .bio-sub {
+                white-space: normal;
+                text-wrap: balance;
+                font-size: 0.84rem;
+                line-height: 1.42;
+                max-width: 310px;
+            }
+            .bio-location {
+                white-space: normal;
+                text-wrap: balance;
+                font-size: 0.68rem;
+                line-height: 1.38;
+                letter-spacing: 0.13em;
+                max-width: 270px;
+            }
+
+            .social-bar {
+                margin-top: 8px;
+                gap: 14px;
+            }
+            .social-btn {
+                width: 42px;
+                height: 42px;
+            }
+            .btn-card {
+                padding: 16px 18px;
+                border-radius: 18px;
+                gap: 13px;
+            }
+            .btn-hero {
+                padding: 17px 19px;
+            }
+            .btn-title {
+                font-size: 1.02rem;
+            }
+            .btn-desc {
+                font-size: 0.78rem;
+            }
+            .hours-card {
+                padding: 16px 18px;
+            }
+            .gallery-card {
+                padding: 16px 15px 18px;
+            }
+            .gallery-item {
+                flex: 0 0 142px;
+                height: 182px;
+            }
+            .map-card {
+                padding: 15px;
+            }
+            .map-box {
+                height: 195px;
+            }
+            .gallery-controls-pc {
+                display: none;
+            }
+            .lb-nav-btn {
+                width: 36px;
+                height: 36px;
+                font-size: 17px;
+            }
         }
     </style>
 </head>
@@ -907,7 +1014,7 @@
                 </svg>
             </div>
 
-            <!-- BIO REFINADA (TIPOGRAFÍA EDITORIAL VINTAGE) -->
+            <!-- BIO EN 1 LÍNEA CONTINUA EN PC / ADAPTADA EN MÓVIL -->
             <div class="brand-bio">
                 <span class="bio-lead">Peluquería y Barbería de Caballeros y Niños</span>
                 <span class="bio-sub">Corte tradicional a peine y tijera · Definición de contorno natural</span>
@@ -1066,12 +1173,9 @@
          SCRIPTS: LISTA DE FOTOS, MAPA LIBRE, GESTOS Y HORARIO
          ========================================================= -->
     <script>
-        /* =========================================================
-           LISTA MAESTRA DE FOTOS (ÚNICAS Y ORDENADAS)
-           Para cambiar el orden o agregar nuevas, solo editas aquí:
-           ========================================================= */
+        /* LISTA MAESTRA DE FOTOS (ÚNICAS Y ORDENADAS) */
         const fotosCuradas = [
-            // 1. Tarjeta Oficial (Frente y Dorso en alta definición)
+            // 1. Tarjeta Oficial
             "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnZErkv6i1E57Bm-v3LMub7gH3QYmJ6yN8Ves1t5eiHfVzEyFvd2Rz40rC2_0d8mPDyVwv6C_qjQwg_oj3gL_j6Oajcy0CXjf_564YiHBy4u6jTUPzeGRYp4QBfpOv40mzSOj3h=s1200",
             
             // 2. Tres generaciones de barberos en el sillón histórico
@@ -1226,10 +1330,9 @@
                 if (e.changedTouches.length === 1) {
                     touchEndX = e.changedTouches[0].clientX;
                     const diff = touchEndX - touchStartX;
-                    // Deslizar con el dedo para pasar de foto si no tiene zoom
                     if (Math.abs(diff) > 45) {
-                        if (diff > 0) navLightbox(-1); // Deslizar derecha: anterior
-                        else navLightbox(1);          // Deslizar izquierda: siguiente
+                        if (diff > 0) navLightbox(-1); // Hacia la derecha: anterior
+                        else navLightbox(1);          // Hacia la izquierda: siguiente
                     }
                 }
             }
@@ -1257,13 +1360,13 @@
                 touchZoom: true
             });
 
-            // Capa libre oficial: 100% gratuita, sin marcas de agua ni API Keys
+            // Capa oficial OpenStreetMap: 100% libre sin API Key
             L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '&copy; OpenStreetMap',
                 maxZoom: 19
             }).addTo(map);
 
-            // Pin artesanal con tijeras de barbero
+            // Pin artesanal con tijeras
             const scissorIcon = L.divIcon({
                 className: 'custom-pin-clean',
                 html: `
@@ -1285,7 +1388,6 @@
                 .bindPopup("<b>Peluquería Alvear</b><br>Av. Callao 1979, Recoleta<br>Fundada en 1968")
                 .openPopup();
 
-            // Asegura renderizado completo sin áreas grises
             setTimeout(() => { map.invalidateSize(); }, 300);
         }
 
