@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- MOTOR DE MAPA INTERACTIVO -->
+    <!-- MOTOR DE MAPA INTERACTIVO (LEAFLET OFICIAL) -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
@@ -152,14 +152,13 @@
             margin-bottom: 8px;
         }
 
-        /* Espacio ampliado arriba y abajo del logo */
         .logo-stage {
             width: 100%;
             max-width: 235px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 16px 0 22px; /* Más píxeles arriba y abajo */
+            margin: 16px 0 22px;
             filter: drop-shadow(0 4px 14px rgba(117, 88, 63, 0.14));
             transition: transform 0.3s ease;
         }
@@ -274,7 +273,7 @@
             transform: translateY(-2px);
         }
 
-        /* HERO CARD WHATSAPP CON ICONO OFICIAL */
+        /* HERO CARD WHATSAPP */
         .btn-hero {
             background: linear-gradient(135deg, #75583F 0%, #523926 100%);
             border: 2px solid var(--gold-vintage);
@@ -590,7 +589,7 @@
         }
 
         /* =========================================================
-           MAPA CON PIN SOBRIO DE TIJERAS
+           MAPA LIBRE (OPENSTREETMAP OFICIAL - SIN API KEY)
            ========================================================= */
         .map-card {
             background: var(--card-surface);
@@ -628,12 +627,13 @@
 
         .map-box {
             width: 100%;
-            height: 190px;
+            height: 200px;
             border-radius: 14px;
             overflow: hidden;
             border: 1px solid rgba(117, 88, 63, 0.2);
             background: #f1ede6;
             z-index: 1;
+            position: relative;
         }
 
         #alvearMap {
@@ -645,13 +645,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 36px;
-            height: 36px;
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
             background: #75583F;
             border: 2px solid #E8CA9B;
             color: #FFF2D4;
-            box-shadow: 0 4px 12px rgba(35, 31, 32, 0.35);
+            box-shadow: 0 4px 14px rgba(35, 31, 32, 0.4);
             transition: transform 0.2s ease;
         }
 
@@ -660,8 +660,8 @@
         }
 
         .clean-scissors-pin svg {
-            width: 18px;
-            height: 18px;
+            width: 20px;
+            height: 20px;
         }
 
         /* =========================================================
@@ -753,7 +753,7 @@
             justify-content: center;
             overflow: hidden;
             position: relative;
-            touch-action: none; /* Permite pinch zoom sin saltos del navegador */
+            touch-action: none;
         }
 
         .lightbox-img-wrap img {
@@ -766,7 +766,6 @@
             will-change: transform;
         }
 
-        /* Flechas laterales flotantes */
         .lb-nav-btn {
             position: absolute;
             top: 50%;
@@ -864,7 +863,7 @@
     <!-- CONTENEDOR MAESTRO -->
     <main class="hub-container">
 
-        <!-- ENCABEZADO CON LOGO OFICIAL SVG (RESPIRACIÓN Y PROPORCIÓN AMPLIADA) -->
+        <!-- ENCABEZADO CON LOGO OFICIAL SVG -->
         <header class="brand-header">
             <div class="heritage-tag">Inaugurado en 1968 · Recoleta</div>
             
@@ -988,70 +987,8 @@
                 </div>
             </div>
 
-            <!-- TRACK CON SCROLL TÁCTIL Y FLECHAS PARA PC -->
-            <div class="gallery-track" id="galleryTrack">
-
-                <!-- 1. TARJETA INSTITUCIONAL FRENTE Y DORSO -->
-                <div class="gallery-item" onclick="openLightbox(0)">
-                    <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnZErkv6i1E57Bm-v3LMub7gH3QYmJ6yN8Ves1t5eiHfVzEyFvd2Rz40rC2_0d8mPDyVwv6C_qjQwg_oj3gL_j6Oajcy0CXjf_564YiHBy4u6jTUPzeGRYp4QBfpOv40mzSOj3h=s1200" alt="Peluquería Alvear">
-                </div>
-
-                <!-- 2. TRES GENERACIONES EN EL SILLÓN HISTÓRICO -->
-                <div class="gallery-item" onclick="openLightbox(1)">
-                    <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlS4BYJwvpSLkY6o3QBBAuimy0eCagzX-KZ0qeROz5gVToaRoXzygQATJRxKczISjMPtfTBsfPd1aMgYDVGohoFM8nay-mH3zEPQojsuyuz9F5FzT5pkOZmCuY7razUn5KaGSyF=s1200" alt="Peluquería Alvear">
-                </div>
-
-                <!-- 3. DON ROBERTO FORTI EN EL SILLÓN DE ÉPOCA -->
-                <div class="gallery-item" onclick="openLightbox(2)">
-                    <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWl-7LRHrzZC6BuhF5c2lJK9rYblSk3MqytU9F5bL_R9m0DDYNogEoRt_lx1CsbAkh9zWq5VtGEsnpuEZL-5E4fMQaWxDpEg-vfbkQXJ0_f7w5rWBmEJ7zMb4CUuCBTvkdRGj_c=s1200" alt="Peluquería Alvear">
-                </div>
-
-                <!-- 4. HERRAMIENTAS HISTÓRICAS Y QUINQUELA MARTÍN (1970) -->
-                <div class="gallery-item" onclick="openLightbox(3)">
-                    <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnwHtc20Ygh4aTHYdJs8_PJofnzbrHu6pw1TgKi5HkmiMcwFzCOoIaT8bdTEePG0GMwefP5t_9HxTRVbwDcn_G1mQEpHiuyKKgEg0cG_oy-9g4jgGsar0a_Va64HJzXIYM9xjt5=s1200" alt="Peluquería Alvear">
-                </div>
-
-                <!-- 5. CUADRO EN TRÉBOLES: PELUQUERÍA ALVEAR -->
-                <div class="gallery-item" onclick="openLightbox(4)">
-                    <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmz-QBPKtA-y1Q3vhv1s6Zw2wFoy7Qx_LtpvQieBJMD0nlsVPXuJW_eKnF1T6aLXZ4zReRHt9krMii__Iz_5ftl4pIcIlZDXNFJJ0raOWigVsKoNZCX4NEpBJ6KTVFzwvR4tCYQ=s1200" alt="Peluquería Alvear">
-                </div>
-
-                <!-- 6. ESTACIONES CLÁSICAS CON ESPEJOS BISELADOS -->
-                <div class="gallery-item" onclick="openLightbox(5)">
-                    <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWm3pOVB_n_Pi2cuMQqCHhjb3hNDXztjg16YzxkmMTobbnnGTGjKnGIoWdC02l2FrhjYXjTCF0MCX5bJZt2sQF4XoAHhYEcp_g1cP5V9ct8vRGIcR3nMf_uB65zDH2cvwdcpvnPq_A=s1200" alt="Peluquería Alvear">
-                </div>
-
-                <!-- 7. SILLÓN DE ESPERA Y VITRINA RETRO -->
-                <div class="gallery-item" onclick="openLightbox(6)">
-                    <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmgObIAwjX50hM-zSuh0tij9KHpSiSZVpz6MvW0xVLCIqIzyuZ9hexn8erFfXkZNH5nYReTrh67ppXB3nQCkb2DjvLQSVgW0nEUjrtAw79pV0lqSyYSoyGz-1x6DnD94sjXWxcz=s1200" alt="Peluquería Alvear">
-                </div>
-
-                <!-- 8. DETALLE DE AUTOS CLÁSICOS A ESCALA -->
-                <div class="gallery-item" onclick="openLightbox(7)">
-                    <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkPAdUi6PxaEOJjmv3liGQOIAekKPtDAdRj1JaURSqmEgPxRBOIfy0ALg88sR3dY6cUF8d2qJ2J9rzn3HTJmTzrU-hR7-OTwQ_TO7On_lDXy9v4nab3HMYHxHbflo0Z-LO9jKxZ=s1200" alt="Peluquería Alvear">
-                </div>
-
-                <!-- 9. FACHADA HISTÓRICA SOBRE AV. CALLAO 1979 -->
-                <div class="gallery-item" onclick="openLightbox(8)">
-                    <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlSRK-gRC_b5R2oUiZSIC7tN5juFuXuX5JuDbTwhjcrkVceqbrKMFFOI0tdHF5Rtbf1HxAd41Z-JyYIvvqKXytuG2BEbQvXe4__kUF0JWWlonfTzqv22jH6G1tv38xIjGTRSVaI=s1200" alt="Peluquería Alvear">
-                </div>
-
-                <!-- 10. CORTE TRADICIONAL DE NIÑOS -->
-                <div class="gallery-item" onclick="openLightbox(9)">
-                    <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkeeiAOP3oYlB3j1yY2FlVxGky1ktXkSO6GLVTjkEB6oLE09ZsJYc4G-cN-Yx_mW5nvFVD_OwjRwnC_s3xRQny5ORIZBLg0DZ1ndb5pSolYz_veNcTnd1q-wRhu6Eooqfk-6qr-Dg=s1200" alt="Peluquería Alvear">
-                </div>
-
-                <!-- 11. FERNANDO FORTI Y ATENCIÓN CÁLIDA -->
-                <div class="gallery-item" onclick="openLightbox(10)">
-                    <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkBBuCgbaQggavdMDCqZtIdw8z6LpcXWu7zRLVkvb8t6XxGBH95DAvk3QuvIdaS4JWSoqQ-1KWsGGRg-HLhrDg3hKash09B2fi0IXAXT6X3ybQQ0tPesZJQqP1iyvKqluSg1zWl=s1200" alt="Peluquería Alvear">
-                </div>
-
-                <!-- 12. TERMINACIÓN A PEINE Y TIJERA -->
-                <div class="gallery-item" onclick="openLightbox(11)">
-                    <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWl1Fx6STeyS8SNcw0QKjjP2naYYToOsWCQg2McchqqWmMvvpDnNhXIeERhfGhJ8V7Hw6kufu2qyKrIfDaDERT744mjwOIZnPzy4zTLmQUh3elvSVMiFCo3Sod2ss_0yE3SFqR4=s1200" alt="Peluquería Alvear">
-                </div>
-
-            </div>
+            <!-- CONTENEDOR GENERADO DINÁMICAMENTE DESDE JS -->
+            <div class="gallery-track" id="galleryTrack"></div>
         </div>
 
         <!-- BOTÓN: LLAMADA DIRECTA -->
@@ -1068,7 +1005,7 @@
             </div>
         </a>
 
-        <!-- MAPA INTERACTIVO CON PIN SOBRIO DE TIJERAS -->
+        <!-- MAPA 100% LIBRE Y FLUIDO (SIN CARTELES NI API KEYS) -->
         <div class="map-card">
             <div class="map-header">
                 <div class="map-title">
@@ -1108,7 +1045,7 @@
 
     </main>
 
-    <!-- MODAL LIGHTBOX INTERACTIVO (ZOOM CON PINCH, FLECHAS Y DESLIZAMIENTO) -->
+    <!-- MODAL LIGHTBOX INTERACTIVO (ZOOM CON DEDOS, FLECHAS Y DESLIZAMIENTO) -->
     <div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox(event)">
         <!-- Flechas de navegación para PC / Móvil -->
         <button class="lb-nav-btn lb-prev" onclick="event.stopPropagation(); navLightbox(-1);" aria-label="Foto anterior">⟨</button>
@@ -1125,32 +1062,70 @@
         </div>
     </div>
 
-    <!-- SCRIPTS: MAPA, CARRUSEL, HORARIOS, ZOOM TÁCTIL Y NAVEGACIÓN -->
+    <!-- =========================================================
+         SCRIPTS: LISTA DE FOTOS, MAPA LIBRE, GESTOS Y HORARIO
+         ========================================================= -->
     <script>
-        // 12 FOTOS TOTALMENTE ÚNICAS
+        /* =========================================================
+           LISTA MAESTRA DE FOTOS (ÚNICAS Y ORDENADAS)
+           Para cambiar el orden o agregar nuevas, solo editas aquí:
+           ========================================================= */
         const fotosCuradas = [
+            // 1. Tarjeta Oficial (Frente y Dorso en alta definición)
             "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnZErkv6i1E57Bm-v3LMub7gH3QYmJ6yN8Ves1t5eiHfVzEyFvd2Rz40rC2_0d8mPDyVwv6C_qjQwg_oj3gL_j6Oajcy0CXjf_564YiHBy4u6jTUPzeGRYp4QBfpOv40mzSOj3h=s1200",
+            
+            // 2. Tres generaciones de barberos en el sillón histórico
             "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlS4BYJwvpSLkY6o3QBBAuimy0eCagzX-KZ0qeROz5gVToaRoXzygQATJRxKczISjMPtfTBsfPd1aMgYDVGohoFM8nay-mH3zEPQojsuyuz9F5FzT5pkOZmCuY7razUn5KaGSyF=s1200",
+            
+            // 3. Don Roberto Forti en plena labor artesanal en los años 70
             "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWl-7LRHrzZC6BuhF5c2lJK9rYblSk3MqytU9F5bL_R9m0DDYNogEoRt_lx1CsbAkh9zWq5VtGEsnpuEZL-5E4fMQaWxDpEg-vfbkQXJ0_f7w5rWBmEJ7zMb4CUuCBTvkdRGj_c=s1200",
+            
+            // 4. Reliquias: Máquina manual, navajas y obra de Quinquela Martín (1970)
             "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnwHtc20Ygh4aTHYdJs8_PJofnzbrHu6pw1TgKi5HkmiMcwFzCOoIaT8bdTEePG0GMwefP5t_9HxTRVbwDcn_G1mQEpHiuyKKgEg0cG_oy-9g4jgGsar0a_Va64HJzXIYM9xjt5=s1200",
+            
+            // 5. Cuadro botánico en tréboles secos "PELUQUERÍA ALVEAR"
             "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmz-QBPKtA-y1Q3vhv1s6Zw2wFoy7Qx_LtpvQieBJMD0nlsVPXuJW_eKnF1T6aLXZ4zReRHt9krMii__Iz_5ftl4pIcIlZDXNFJJ0raOWigVsKoNZCX4NEpBJ6KTVFzwvR4tCYQ=s1200",
+            
+            // 6. Estaciones de trabajo clásicas con espejos biselados
             "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWm3pOVB_n_Pi2cuMQqCHhjb3hNDXztjg16YzxkmMTobbnnGTGjKnGIoWdC02l2FrhjYXjTCF0MCX5bJZt2sQF4XoAHhYEcp_g1cP5V9ct8vRGIcR3nMf_uB65zDH2cvwdcpvnPq_A=s1200",
+            
+            // 7. Sillón de espera y vitrina de colección retro
             "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmgObIAwjX50hM-zSuh0tij9KHpSiSZVpz6MvW0xVLCIqIzyuZ9hexn8erFfXkZNH5nYReTrh67ppXB3nQCkb2DjvLQSVgW0nEUjrtAw79pV0lqSyYSoyGz-1x6DnD94sjXWxcz=s1200",
+            
+            // 8. Colección de autos clásicos a escala y licores
             "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkPAdUi6PxaEOJjmv3liGQOIAekKPtDAdRj1JaURSqmEgPxRBOIfy0ALg88sR3dY6cUF8d2qJ2J9rzn3HTJmTzrU-hR7-OTwQ_TO7On_lDXy9v4nab3HMYHxHbflo0Z-LO9jKxZ=s1200",
+            
+            // 9. Fachada histórica sobre Av. Callao 1979
             "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlSRK-gRC_b5R2oUiZSIC7tN5juFuXuX5JuDbTwhjcrkVceqbrKMFFOI0tdHF5Rtbf1HxAd41Z-JyYIvvqKXytuG2BEbQvXe4__kUF0JWWlonfTzqv22jH6G1tv38xIjGTRSVaI=s1200",
+            
+            // 10. Corte tradicional infantil con dedicación
             "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkeeiAOP3oYlB3j1yY2FlVxGky1ktXkSO6GLVTjkEB6oLE09ZsJYc4G-cN-Yx_mW5nvFVD_OwjRwnC_s3xRQny5ORIZBLg0DZ1ndb5pSolYz_veNcTnd1q-wRhu6Eooqfk-6qr-Dg=s1200",
+            
+            // 11. Fernando Forti y la atención cálida de siempre
             "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkBBuCgbaQggavdMDCqZtIdw8z6LpcXWu7zRLVkvb8t6XxGBH95DAvk3QuvIdaS4JWSoqQ-1KWsGGRg-HLhrDg3hKash09B2fi0IXAXT6X3ybQQ0tPesZJQqP1iyvKqluSg1zWl=s1200",
+            
+            // 12. Terminación clásica a peine y tijera: caída natural
             "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWl1Fx6STeyS8SNcw0QKjjP2naYYToOsWCQg2McchqqWmMvvpDnNhXIeERhfGhJ8V7Hw6kufu2qyKrIfDaDERT744mjwOIZnPzy4zTLmQUh3elvSVMiFCo3Sod2ss_0yE3SFqR4=s1200"
         ];
 
-        // 1. DESPLAZAMIENTO DEL CARRUSEL EN PC
+        // RENDERIZADO DINÁMICO DEL CARRUSEL (SIN EPÍGRAFES)
+        function renderGalleryTrack() {
+            const track = document.getElementById('galleryTrack');
+            track.innerHTML = fotosCuradas.map((url, index) => `
+                <div class="gallery-item" onclick="openLightbox(${index})">
+                    <img src="${url}" alt="Peluquería Alvear" loading="lazy">
+                </div>
+            `).join('');
+        }
+
+        // DESPLAZAMIENTO DEL CARRUSEL EN PC
         function scrollGallery(direction) {
             const track = document.getElementById('galleryTrack');
             const step = 280;
             track.scrollBy({ left: direction * step, behavior: 'smooth' });
         }
 
-        // 2. CONTROL DEL LIGHTBOX, NAVEGACIÓN Y ZOOM
+        // CONTROL DEL LIGHTBOX, NAVEGACIÓN Y PINCH-TO-ZOOM
         let currentPhotoIndex = 0;
         let scale = 1;
         let startScale = 1;
@@ -1199,7 +1174,7 @@
             renderPhoto(currentPhotoIndex + direction);
         }
 
-        // GESTOS TÁCTILES: PINCH-TO-ZOOM, DOBLE TOQUE Y DESLIZAMIENTO (SWIPE)
+        // GESTOS TÁCTILES: PINCH-TO-ZOOM, PAN, DOBLE TAP Y SWIPE
         wrapEl.addEventListener('touchstart', (e) => {
             if (e.touches.length === 2) {
                 isPinching = true;
@@ -1214,7 +1189,7 @@
                 startX = e.touches[0].clientX - posX;
                 startY = e.touches[0].clientY - posY;
 
-                // Doble toque para ampliar/restablecer
+                // Doble toque para zoom rápido
                 const currentTime = Date.now();
                 if (currentTime - lastTap < 300) {
                     if (scale > 1) {
@@ -1251,16 +1226,16 @@
                 if (e.changedTouches.length === 1) {
                     touchEndX = e.changedTouches[0].clientX;
                     const diff = touchEndX - touchStartX;
-                    // Deslizar para pasar de foto si no está ampliado
+                    // Deslizar con el dedo para pasar de foto si no tiene zoom
                     if (Math.abs(diff) > 45) {
-                        if (diff > 0) navLightbox(-1); // Hacia la derecha: anterior
-                        else navLightbox(1);          // Hacia la izquierda: siguiente
+                        if (diff > 0) navLightbox(-1); // Deslizar derecha: anterior
+                        else navLightbox(1);          // Deslizar izquierda: siguiente
                     }
                 }
             }
         });
 
-        // CONTROL POR TECLADO EN PC (FLECHAS Y ESCAPE)
+        // CONTROL CON TECLADO EN COMPUTADORA (FLECHAS Y ESCAPE)
         window.addEventListener('keydown', (e) => {
             if (!modalEl.classList.contains('active')) return;
             if (e.key === 'ArrowLeft') navLightbox(-1);
@@ -1268,7 +1243,7 @@
             if (e.key === 'Escape') closeLightbox();
         });
 
-        // 3. MAPA LEAFLET CON PIN SOBRIO DE TIJERAS
+        // INICIALIZACIÓN DEL MAPA OFICIAL LIBRE (OPENSTREETMAP - SIN API KEY)
         function initMap() {
             const lat = -34.58785;
             const lng = -58.38872;
@@ -1277,14 +1252,18 @@
                 center: [lat, lng],
                 zoom: 16,
                 zoomControl: true,
-                scrollWheelZoom: false
+                scrollWheelZoom: true,
+                dragging: true,
+                touchZoom: true
             });
 
-            L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-                attribution: '&copy; OpenStreetMap &copy; CARTO',
+            // Capa libre oficial: 100% gratuita, sin marcas de agua ni API Keys
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; OpenStreetMap',
                 maxZoom: 19
             }).addTo(map);
 
+            // Pin artesanal con tijeras de barbero
             const scissorIcon = L.divIcon({
                 className: 'custom-pin-clean',
                 html: `
@@ -1298,16 +1277,19 @@
                         </svg>
                     </div>
                 `,
-                iconSize: [36, 36],
-                iconAnchor: [18, 18]
+                iconSize: [38, 38],
+                iconAnchor: [19, 19]
             });
 
             L.marker([lat, lng], { icon: scissorIcon }).addTo(map)
                 .bindPopup("<b>Peluquería Alvear</b><br>Av. Callao 1979, Recoleta<br>Fundada en 1968")
                 .openPopup();
+
+            // Asegura renderizado completo sin áreas grises
+            setTimeout(() => { map.invalidateSize(); }, 300);
         }
 
-        // 4. ESTADO DE APERTURA EN VIVO (HORARIO DE BUENOS AIRES)
+        // ESTADO DE APERTURA EN VIVO (HORARIO DE BUENOS AIRES)
         function updateStoreStatus() {
             const now = new Date();
             const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
@@ -1342,9 +1324,10 @@
             }
         }
 
-        // INICIALIZACIÓN
+        // ARRANQUE
         window.addEventListener('DOMContentLoaded', () => {
             if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+            renderGalleryTrack();
             initMap();
             updateStoreStatus();
             requestAnimationFrame(() => document.body.classList.remove('preload'));
