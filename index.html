@@ -11,10 +11,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- MOTOR DE MAPA INTERACTIVO (LEAFLET OFICIAL) -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
     <style>
         /* =========================================================
            ADN CROMÁTICO OFICIAL: SEPIA VINTAGE & MARRÓN SASTRE
@@ -107,7 +103,7 @@
 
         /* DOBLE FILETE PERIMETRAL VINTAGE */
         .frame-line {
-            position: fixed;
+            position: absolute;
             top: 7px;
             bottom: 7px;
             left: 7px;
@@ -155,7 +151,6 @@
             margin-bottom: 8px;
         }
 
-        /* Logo libre de recuadros con holgura visual */
         .logo-stage {
             width: 100%;
             max-width: 235px;
@@ -197,7 +192,7 @@
             text-transform: uppercase;
             color: var(--brand-brown-dark);
             line-height: 1.35;
-            white-space: nowrap; /* En PC: 1 sola línea */
+            white-space: nowrap;
         }
 
         .bio-sub {
@@ -206,7 +201,7 @@
             font-size: 0.88rem;
             color: var(--text-muted);
             line-height: 1.4;
-            white-space: nowrap; /* En PC: 1 sola línea */
+            white-space: nowrap;
         }
 
         .bio-location {
@@ -217,7 +212,7 @@
             color: var(--brand-brown-light);
             font-weight: 600;
             margin-top: 2px;
-            white-space: nowrap; /* En PC: 1 sola línea */
+            white-space: nowrap;
         }
 
         .social-bar {
@@ -599,7 +594,7 @@
         }
 
         /* =========================================================
-           MAPA LIBRE (OPENSTREETMAP OFICIAL - SIN API KEY)
+           MAPA OFICIAL GOOGLE MAPS (PÚBLICO, GRATUITO Y SIN API KEY)
            ========================================================= */
         .map-card {
             background: var(--card-surface);
@@ -637,41 +632,19 @@
 
         .map-box {
             width: 100%;
-            height: 200px;
+            height: 220px;
             border-radius: 14px;
             overflow: hidden;
             border: 1px solid rgba(117, 88, 63, 0.22);
-            background: #f1ede6;
-            z-index: 1;
+            background: #F8F5EE;
             position: relative;
         }
 
-        #alvearMap {
+        .map-box iframe {
             width: 100%;
             height: 100%;
-        }
-
-        .clean-scissors-pin {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            background: #75583F;
-            border: 2px solid #E8CA9B;
-            color: #FFF2D4;
-            box-shadow: 0 4px 14px rgba(35, 31, 32, 0.4);
-            transition: transform 0.2s ease;
-        }
-
-        .clean-scissors-pin:hover {
-            transform: scale(1.12);
-        }
-
-        .clean-scissors-pin svg {
-            width: 20px;
-            height: 20px;
+            border: 0;
+            display: block;
         }
 
         /* =========================================================
@@ -882,7 +855,6 @@
                 margin: 14px 0 18px;
             }
             
-            /* En móvil se activa el salto equilibrado sin palabras huérfanas */
             .brand-bio {
                 gap: 7px;
                 max-width: 100%;
@@ -946,7 +918,7 @@
                 padding: 15px;
             }
             .map-box {
-                height: 195px;
+                height: 205px;
             }
             .gallery-controls-pc {
                 display: none;
@@ -1018,7 +990,7 @@
             <div class="brand-bio">
                 <span class="bio-lead">Peluquería y Barbería de Caballeros y Niños</span>
                 <span class="bio-sub">Corte tradicional a peine y tijera · Definición de contorno natural</span>
-                <span class="bio-location">Tres generaciones en la misma esquina de Recoleta</span>
+                <span class="bio-location">Tres generaciones en el mismo lugar de Recoleta</span>
             </div>
 
             <!-- REDES SOCIALES -->
@@ -1112,7 +1084,7 @@
             </div>
         </a>
 
-        <!-- MAPA 100% LIBRE Y FLUIDO (SIN CARTELES NI API KEYS) -->
+        <!-- MAPA OFICIAL GOOGLE MAPS (INDEXADO Y 100% GRATUITO) -->
         <div class="map-card">
             <div class="map-header">
                 <div class="map-title">
@@ -1121,14 +1093,22 @@
                 </div>
                 <span class="badge-pill">Av. Callao 1979</span>
             </div>
-            <div class="map-address-sub">Entre Av. Alvear y Posadas · Ciudad de Buenos Aires</div>
+            <div class="map-address-sub">Tres generaciones en el mismo lugar de Recoleta</div>
             <div class="map-box">
-                <div id="alvearMap"></div>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.6438819610303!2d-58.3872251!3d-34.5878764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccaa4eae22aa7%3A0x55a52bfeff49e81a!2sPeluquer%C3%ADa%20Alvear!5e0!3m2!1ses-419!2sar!4v1715456000000!5m2!1ses-419!2sar" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="strict-origin-when-cross-origin">
+                </iframe>
             </div>
         </div>
 
         <!-- BOTÓN: CÓMO LLEGAR (GOOGLE MAPS) -->
-        <a href="https://maps.google.com/?q=Peluquer%C3%ADa+Alvear+Av.+Callao+1979+Buenos+Aires" target="_blank" rel="noopener noreferrer" class="btn-card">
+        <a href="https://maps.app.goo.gl/dfnWMGrih7oTWPFt6" target="_blank" rel="noopener noreferrer" class="btn-card">
             <div class="icon-box">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
             </div>
@@ -1170,7 +1150,7 @@
     </div>
 
     <!-- =========================================================
-         SCRIPTS: LISTA DE FOTOS, MAPA LIBRE, GESTOS Y HORARIO
+         SCRIPTS: LISTA DE FOTOS, GESTOS Y HORARIOS EN VIVO
          ========================================================= -->
     <script>
         /* LISTA MAESTRA DE FOTOS (ÚNICAS Y ORDENADAS) */
@@ -1293,7 +1273,6 @@
                 startX = e.touches[0].clientX - posX;
                 startY = e.touches[0].clientY - posY;
 
-                // Doble toque para zoom rápido
                 const currentTime = Date.now();
                 if (currentTime - lastTap < 300) {
                     if (scale > 1) {
@@ -1331,8 +1310,8 @@
                     touchEndX = e.changedTouches[0].clientX;
                     const diff = touchEndX - touchStartX;
                     if (Math.abs(diff) > 45) {
-                        if (diff > 0) navLightbox(-1); // Hacia la derecha: anterior
-                        else navLightbox(1);          // Hacia la izquierda: siguiente
+                        if (diff > 0) navLightbox(-1);
+                        else navLightbox(1);
                     }
                 }
             }
@@ -1345,51 +1324,6 @@
             if (e.key === 'ArrowRight') navLightbox(1);
             if (e.key === 'Escape') closeLightbox();
         });
-
-        // INICIALIZACIÓN DEL MAPA OFICIAL LIBRE (OPENSTREETMAP - SIN API KEY)
-        function initMap() {
-            const lat = -34.58785;
-            const lng = -58.38872;
-
-            const map = L.map('alvearMap', {
-                center: [lat, lng],
-                zoom: 16,
-                zoomControl: true,
-                scrollWheelZoom: true,
-                dragging: true,
-                touchZoom: true
-            });
-
-            // Capa oficial OpenStreetMap: 100% libre sin API Key
-            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; OpenStreetMap',
-                maxZoom: 19
-            }).addTo(map);
-
-            // Pin artesanal con tijeras
-            const scissorIcon = L.divIcon({
-                className: 'custom-pin-clean',
-                html: `
-                    <div class="clean-scissors-pin" title="Peluquería Alvear">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="6" cy="6" r="3"/>
-                            <circle cx="6" cy="18" r="3"/>
-                            <line x1="20" y1="4" x2="8.12" y2="15.88"/>
-                            <line x1="14.47" y1="14.48" x2="20" y2="20"/>
-                            <line x1="8.12" y1="8.12" x2="12" y2="12"/>
-                        </svg>
-                    </div>
-                `,
-                iconSize: [38, 38],
-                iconAnchor: [19, 19]
-            });
-
-            L.marker([lat, lng], { icon: scissorIcon }).addTo(map)
-                .bindPopup("<b>Peluquería Alvear</b><br>Av. Callao 1979, Recoleta<br>Fundada en 1968")
-                .openPopup();
-
-            setTimeout(() => { map.invalidateSize(); }, 300);
-        }
 
         // ESTADO DE APERTURA EN VIVO (HORARIO DE BUENOS AIRES)
         function updateStoreStatus() {
@@ -1430,7 +1364,6 @@
         window.addEventListener('DOMContentLoaded', () => {
             if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
             renderGalleryTrack();
-            initMap();
             updateStoreStatus();
             requestAnimationFrame(() => document.body.classList.remove('preload'));
         });
